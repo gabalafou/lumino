@@ -142,6 +142,11 @@ describe('@lumino/widgets', () => {
         let menu = new Menu({ commands });
         expect(menu.hasClass('lm-Menu')).to.equal(true);
       });
+
+      it('should set role to menu for accessibility', () => {
+        // Menu should have role="menu" for assistive tech like screen readers
+        expect(menu.contentNode.getAttribute('role')).to.equal('menu');
+      });
     });
 
     describe('#dispose()', () => {
